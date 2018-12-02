@@ -1,0 +1,24 @@
+<h3>Корзина</h3>
+<table border="1">
+    <tr>
+      <th>Опция</th>
+      <th>Id</th>
+      <th>Наимнование</th>
+      <th>Цена</th>
+      <th>Категория продукта</th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td align="center">
+            <a (click)="remove(item.product.id)">Удалить</a>
+        </td>
+        <td>{{item.product.id}}</td>
+        <td>{{item.product.name}}</td>
+        <td>{{item.product.price}}$</td>
+        <td>{{item.product.category}}</td>
+        <td>{{item.product.price * item.quantity}}$</td>
+    </tr>
+    <tr>
+        <td colspan="5" align="right">Общая сумма</td>
+        <td>{{total}}*</td>
+    </tr>
+</table>

@@ -1,0 +1,24 @@
+<h2>Продукт {{selectedProduct.name | uppercase}} </h2>
+<div>
+  <table>
+    <tr>
+      <td>id:</td>
+      <td><input type="text" [(ngModel)]="selectedProduct.id"/></td>
+    </tr>
+    <tr>
+      <td>Наименование продукта:</td>
+      <td><input type="text" [(ngModel)]="selectedProduct.name"/></td>
+    </tr>
+    <tr>
+      <td>Цена:</td>
+      <td><input type="text" [(ngModel)]="selectedProduct.price"></td>
+    </tr>
+    <tr>
+      <td>Категория продукта: </td>
+      <td><input type="text" [(ngModel)]="selectedProduct.category"/></td>
+    </tr>
+  </table>
+  <br>
+  <button routerLink="/adminPanel">Сохранить</button>
+  <button (click)="onDelete()" routerLink="/adminPanel">Удалить</button>
+</div>

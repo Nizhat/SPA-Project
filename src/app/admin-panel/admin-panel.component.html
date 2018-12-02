@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 loginBox">
+      <a href="javascript:void(0);" (click)="logout()">Logout</a>
+  </div>
+</div>
+<div>
+  <form (ngSubmit)="addCategory()" #addCategoryForm="ngForm">
+    <h2>Добавить категорию продукта</h2>
+    <table>
+      <tr>
+        <td><label for="id">id:</label></td>
+        <td>
+          <input type="text" 
+                  class="form-control"
+                  id="id"
+                  required
+                  [(ngModel)]="addedCategory.id"
+                  name="id"
+                  #id="ngModel"/>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="name">Наименование категории:</label></td>
+        <td>
+          <input type="text"
+                  class="form-control"
+                  id="name"
+                  required
+                  [(ngModel)]="addedCategory.name"
+                  name="name"
+                  #name="ngModel"/>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-success" [disabled]="!addCategoryForm.form.valid"> Добавить </button>
+  </form>
+
+  <h2>Категории</h2>
+  <ul class="heroes">
+    <li *ngFor="let category of categorii" routerLink="/categorii/{{category.id}}">
+      <span class="badge"> {{category.name}} </span>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <form (ngSubmit)="addProduct()" #addProductForm="ngForm">
+    <h2>Добавить новый продукт</h2>
+    <table class="form-group">
+      <tr>
+        <td><label for="id">id:</label></td>
+        <td>
+          <input type="text"
+                  class="form-control"
+                  id="id"
+                  required
+                  [(ngModel)]="addedProduct.id"
+                  name="id"
+                  #id="ngModel"/>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="name">Имя:</label></td>
+        <td>
+          <input type="text"
+                  class="form-control"
+                  id="name"
+                  required
+                  [(ngModel)]="addedProduct.name"
+                  name="name"
+                  #name="ngModel"/>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="price">Цена:</label></td>
+        <td>
+          <input type="number"
+                  class="form-control"
+                  id="price"
+                  required
+                  [(ngModel)]="addedProduct.price"
+                  name="price"
+                  #price="ngModel"/>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="category">Категория продукта:</label></td>
+        <td>
+          <input type="text"
+                  class="form-control"
+                  id="category"
+                  required
+                  [(ngModel)]="addedProduct.category"
+                  name="category"
+                  #category="ngModel"/>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-success" [disabled]="!addProductForm.form.valid">Добавить</button>
+  </form>
+
+  <h2>Список продуктов</h2>
+  <ul class="heroes">
+    <li *ngFor="let product of products" routerLink="/products/{{product.id}}">
+      <span class="badge">Наименование: {{product.name}}   </span><br>
+      <span class="badge">Цена: {{product.price}}$</span><br>
+      <span class="badge">Категория: {{product.category}}</span><br>
+    </li>
+  </ul>
+
+</div>

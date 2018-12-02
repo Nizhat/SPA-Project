@@ -1,0 +1,28 @@
+h2 {
+	margin-top: 30px;
+}
+
+ul {
+	margin-left: -40px;
+	margin-top: 40px;
+}
+
+li {
+	/* background-color: #CD5C5C; */
+	padding: 20px;
+	display: inline-block;
+	margin-right: 10px;
+  	margin-bottom: 10px;
+}
+
+li:hover {
+	background-color:#CD5C5C;
+	color: rgb(0, 0, 0)
+}
+button {
+	border: none;
+}
+button:hover {
+	background-color: blanchedalmond;
+	border: none;
+}

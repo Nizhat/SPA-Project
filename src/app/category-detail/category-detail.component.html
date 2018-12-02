@@ -1,0 +1,28 @@
+<h2>Категория {{selectedCategory.name | uppercase}} </h2>
+
+<div>
+  <table>
+    <tr>
+      <td>id:</td>
+      <td><input type="text" [(ngModel)]="selectedCategory.id"/></td>
+    </tr>
+    <tr>
+      <td>Наименование категории</td>
+      <td><input type="text" [(ngModel)]="selectedCategory.name" (input)="onNameChange($event.target.value)"/></td>
+    </tr>
+    <tr>
+      <td>Список продуктов:</td>
+      <td>
+        <ul>
+          <li *ngFor="let product of selectedCategory.products">
+            <span class="badge"> {{product.name}} </span>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+  <button routerLink="/adminPanel">Сохранить</button>
+  <button (click)="onDelete()" routerLink="/adminPanel">Удалить</button>
+</div>
