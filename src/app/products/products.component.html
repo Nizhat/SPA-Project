@@ -2,7 +2,7 @@
   <h2>Список продуктов</h2>
   <ul class="heroes">
     <li *ngFor="let product of products">
-      <span class="span">Наименование: {{product.name}}   </span><br>
+      <span class="span">Наименование: {{product.name}}</span><br>
       <span class="span">Цена: {{product.price}}$</span><br>
       <span class="span">Категория: {{product.category}}</span><br>
       <button class="button" [routerLink]="['/cart', { id:product.id }]" >Добавить в корзину</button>
